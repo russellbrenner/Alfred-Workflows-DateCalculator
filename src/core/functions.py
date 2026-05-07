@@ -8,7 +8,7 @@ Ported from date_functions.py.
 from __future__ import annotations
 
 from datetime import datetime, timedelta
-from typing import Callable
+from collections.abc import Callable
 
 from dateutil.relativedelta import relativedelta, MO, TU, WE, TH, FR, SA, SU
 from dateutil.rrule import rrule, YEARLY, DAILY

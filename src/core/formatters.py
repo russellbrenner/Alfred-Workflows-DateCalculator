@@ -6,8 +6,8 @@ Ported from date_formatters.py.
 """
 from __future__ import annotations
 
+from collections.abc import Callable
 from datetime import datetime
-from typing import Callable
 
 # Type alias for formatter functions
 FormatterFunction = Callable[[datetime], str]

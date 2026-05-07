@@ -15,7 +15,6 @@ from src.core.mappings import (
     DEFAULT_DATE_FORMAT,
     DEFAULT_DATE_TIME_FORMAT,
     DEFAULT_TIME_FORMAT,
-    DEFAULT_WORKFLOW_SETTINGS,
 )
 
 
@@ -61,7 +60,7 @@ def load_settings(data_dir: Path | None = None) -> Settings:
             return migrated
         return Settings()
 
-    with open(settings_file, "r") as f:
+    with open(settings_file) as f:
         raw = json.load(f)
 
     return _apply_defaults(raw)
@@ -109,7 +108,7 @@ def _try_migrate_old_settings(data_dir: Path) -> Settings | None:
         return None
 
     try:
-        with open(old_file, "r") as f:
+        with open(old_file) as f:
             raw = json.load(f)
 
         # If it already has the new keys, no migration needed

@@ -59,7 +59,7 @@ def _no_process(dt: str) -> str:
 
 
 def _fill_minutes(dt: str) -> str:
-    return re.sub(r"(?<![:\d])(\d{1,2})(AM|PM)", r"\1:00\2", dt, 0, re.IGNORECASE)
+    return re.sub(r"(?<![:\d])(?P<num>\d{1,2})(?P<ampm>AM|PM)", r"\g<num>:00\g<ampm>", dt, flags=re.IGNORECASE)
 
 
 TIME_MAPPINGS: dict[str, TimeFormatMapping] = {

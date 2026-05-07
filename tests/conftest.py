@@ -9,7 +9,6 @@ from freezegun import freeze_time
 
 from src.core.settings import Settings
 
-
 # ── Time fixtures ─────────────────────────────────────────────────────
 
 

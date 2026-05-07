@@ -8,7 +8,8 @@ Ported from date_calculator.py, utils.py, and date_functions.py.
 from __future__ import annotations
 
 from datetime import datetime, timedelta
-from typing import Callable, Any
+from typing import Any
+from collections.abc import Callable
 
 from src.core.parser import (
     TimespanCommand,

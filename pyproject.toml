@@ -1,6 +1,6 @@
 [build-system]
-requires = ["pip"]
-build-backend = "pip._vendor.pep517.buildapi"
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "alfred-date-calculator"
@@ -21,9 +21,13 @@ dev = [
     "ruff>=0.4",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]
+
 [tool.ruff]
 target-version = "py310"
-line-length = 100
+line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "UP", "B", "SIM"]
