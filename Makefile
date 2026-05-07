@@ -35,9 +35,8 @@ build: clean
 	cp src/set_date_time_format.py build/DateCalculator/
 	cp src/show_date_format.py build/DateCalculator/
 	cp src/show_time_format.py build/DateCalculator/
-	@# Copy source packages
-	cp -r src/core build/DateCalculator/core
-	cp -r src/alfred build/DateCalculator/alfred
+	@# Copy source package exactly as imported by entry points
+	cp -r src build/DateCalculator/src
 	@# Copy static assets
 	cp info.plist build/DateCalculator/
 	cp icon.png build/DateCalculator/
