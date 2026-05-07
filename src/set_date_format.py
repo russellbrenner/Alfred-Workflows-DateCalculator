@@ -3,10 +3,22 @@
 
 from __future__ import annotations
 
+from src.alfred.io import read_query, write_output
+from src.core.mappings import DATE_MAPPINGS
+from src.core.settings import load_settings, save_settings
+
 
 def main() -> None:
     """Set the date format preference."""
-    raise NotImplementedError("Implementer: read query, save format setting, print confirmation")
+    query = read_query()
+    if query not in DATE_MAPPINGS:
+        write_output("Invalid date format")
+        return
+
+    settings = load_settings()
+    settings.date_format = query
+    save_settings(settings)
+    write_output(f"Date format set to {query}")
 
 
 if __name__ == "__main__":
