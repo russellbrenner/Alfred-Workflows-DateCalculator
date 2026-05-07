@@ -4,13 +4,8 @@
 Reads the query from Alfred, parses it, executes the calculation,
 and returns JSON feedback for display.
 """
-from __future__ import annotations
 
-from src.alfred.io import read_query, write_feedback
-from src.alfred.feedback import Feedback
-from src.core.settings import load_settings
-from src.core.parser import DateParser
-from src.core.engine import execute_command
+from __future__ import annotations
 
 
 def main() -> None:

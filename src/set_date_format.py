@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Set date format — action entry point."""
-from __future__ import annotations
 
-from src.alfred.io import read_query, write_output
+from __future__ import annotations
 
 
 def main() -> None:

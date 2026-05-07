@@ -3,6 +3,7 @@
 Handles sys.argv parsing for Alfred's Script Filter and Run Script objects,
 and stdout writing for JSON feedback and plain text output.
 """
+
 from __future__ import annotations
 
 import sys

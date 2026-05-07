@@ -1,9 +1,8 @@
 """Tests for the Alfred JSON feedback builder."""
+
 from __future__ import annotations
 
 import json
-
-import pytest
 
 from src.alfred.feedback import Feedback, Item
 

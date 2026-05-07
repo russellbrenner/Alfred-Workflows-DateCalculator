@@ -3,6 +3,7 @@
 Produces valid JSON output per the Alfred Script Filter JSON spec:
 https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
 """
+
 from __future__ import annotations
 
 import json
@@ -13,6 +14,7 @@ from typing import Any
 @dataclass
 class ItemMods:
     """Modifier key configurations for an item."""
+
     cmd: dict[str, Any] | None = None
     ctrl: dict[str, Any] | None = None
     shift: dict[str, Any] | None = None
@@ -37,6 +39,7 @@ class Item:
         variables: Workflow variables set when item is actioned.
         match: Custom text for Alfred's filtering (when alfredfiltersresults=True).
     """
+
     title: str
     subtitle: str = ""
     arg: str | None = None
@@ -95,6 +98,7 @@ class Feedback:
         skipknowledge: If True, Alfred won't reorder items based on user history.
         variables: Workflow-wide variables.
     """
+
     items: list[Item] = field(default_factory=list)
     rerun: float = 0
     skipknowledge: bool = False

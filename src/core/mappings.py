@@ -2,6 +2,7 @@
 
 Ported from date_format_mappings.py — converted to TypedDict for type safety.
 """
+
 from __future__ import annotations
 
 import re
@@ -10,6 +11,7 @@ from typing import TypedDict
 
 class DateFormatMapping(TypedDict):
     """Maps a format key to its strftime pattern and regex."""
+
     name: str
     date_format: str
     regex: str
@@ -17,6 +19,7 @@ class DateFormatMapping(TypedDict):
 
 class TimeFormatMapping(TypedDict):
     """Maps a time format key to its strftime pattern, regex, and preprocessor."""
+
     name: str
     time_format: str
     regex: str
@@ -25,6 +28,7 @@ class TimeFormatMapping(TypedDict):
 
 class TimeCalculationEntry(TypedDict):
     """Defines interval parameters for a time unit."""
+
     interval: str  # 'year', 'month', 'week', 'day', 'hour', 'minute', 'second'
     singular: str
     plural: str

@@ -3,6 +3,7 @@
 Replaces versioning.py and the deanishe Workflow.settings API.
 Uses JSON stored in $ALFRED_WORKFLOW_DATA for persistence.
 """
+
 from __future__ import annotations
 
 import json
@@ -21,6 +22,7 @@ from src.core.mappings import (
 @dataclass
 class Settings:
     """Workflow settings with migration-aware defaults."""
+
     date_format: str = DEFAULT_DATE_FORMAT
     time_format: str = DEFAULT_TIME_FORMAT
     date_time_format: str = DEFAULT_DATE_TIME_FORMAT
@@ -119,9 +121,7 @@ def _try_migrate_old_settings(data_dir: Path) -> Settings | None:
         migrated = {
             "date-format": raw.get("date-format", raw.get("date_format", DEFAULT_DATE_FORMAT)),
             "time-format": raw.get("time-format", raw.get("time_format", DEFAULT_TIME_FORMAT)),
-            "date-time-format": raw.get(
-                "date-time-format", raw.get("date_time_format", DEFAULT_DATE_TIME_FORMAT)
-            ),
+            "date-time-format": raw.get("date-time-format", raw.get("date_time_format", DEFAULT_DATE_TIME_FORMAT)),
             "anniversaries": raw.get("anniversaries", dict(DEFAULT_ANNIVERSARIES)),
         }
 
@@ -133,6 +133,7 @@ def _try_migrate_old_settings(data_dir: Path) -> Settings | None:
 
 
 # ── Module-level convenience (for entry points) ───────────────────────
+
 
 def load() -> Settings:
     """Load settings using the default data directory."""

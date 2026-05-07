@@ -1,4 +1,5 @@
 """Pytest fixtures for the date calculator test suite."""
+
 from __future__ import annotations
 
 from datetime import datetime
@@ -62,10 +63,12 @@ def iso_settings() -> Settings:
 def settings_with_anniversaries() -> Settings:
     """Return Settings with custom anniversaries."""
     s = Settings()
-    s.anniversaries.update({
-        "birthday": "1990-03-15T00:00:00",
-        "holiday": "2024-07-01T00:00:00",
-    })
+    s.anniversaries.update(
+        {
+            "birthday": "1990-03-15T00:00:00",
+            "holiday": "2024-07-01T00:00:00",
+        }
+    )
     return s
 
 
