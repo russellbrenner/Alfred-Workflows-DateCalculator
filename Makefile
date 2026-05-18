@@ -46,9 +46,11 @@ build: clean
 	@# Clean up
 	find build/DateCalculator -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	find build/DateCalculator -type f -name "*.pyc" -delete 2>/dev/null || true
-	rm -rf build/DateCalculator/bin/ build/DateCalculator/*.dist-info/
+	rm -rf build/DateCalculator/bin/ build/DateCalculator/*.dist-info/ build/DateCalculator/*.egg-info/
+	rm -rf build/DateCalculator/pypeg2/test/ build/DateCalculator/pypeg2/*.egg-info/
+	rm -rf build/DateCalculator/pip/
 	@echo "Build complete: build/DateCalculator/"
 
 pack: build
-	cd build && zip -r ../DateCalculator.alfredworkflow DateCalculator/
+	cd build/DateCalculator && zip -r ../../DateCalculator.alfredworkflow .
 	@echo "Package created: DateCalculator.alfredworkflow"
